@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Регистрация</title>
+    <link rel="stylesheet" href="css/style.css">  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="main">
+        <section class="signup">
+            <!-- <img src="images/signup-bg.jpg" alt=""> -->
+    
+            <div class="container">
+                <div class="signup-content">
+                    <div style="text-align:justify;">
+                        <h1>Регистрация</h1>
+                        <div style="float: right; margin-top: -60px; margin-right: 40px;">
+                            <span class="step"></span>
+                            <span class="step"></span>
+                            <span class="step"></span>
+                        </div>
+                    </div>
+
+                    <form id="signup-form1" class="signup-form">
+
+                        <div class="form-group country tab">
+                            <label for="country">
+                                Страна
+                            </label>
+                            <div class="select-box select">
+                                <select  name="country" id="country" required>
+                                    <option selected="--">--</option>
+                                    <option value="KG">Кыргызстан</option>
+                                    <option value="KZ">Казахстан</option>
+                                    <option value="Узбекистан">Узбекистан</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-row tab">
+                            <div class="form-text">
+                                <div class="form-group">
+                                    <label for="first_name">Имя</label>
+                                    <input type="text" class="form-input" name="first_name" id="first_name" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="last_name">Фамилия</label>
+                                    <input type="text" class="form-input" name="last_name" id="last_name" />
+                                </div>
+                                <a class="add-info-link" onclick="show()"> Дополнительные контакты ></a>
+                                <div class="add_info">
+                                    <div class="form-group">
+                                        <label for="email">Email</label>
+                                        <input type="email" class="form-input" name="email" id="email"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="phone_number">Номер WhatsApp</label>
+                                        <input type="number" class="form-input" name="whatsapp_number" id="whatsapp_number" required/>
+                                    </div>
+                                </div>
+                            </div>
+                            <script>
+                                function show(){
+                                    var d = document.getElementsByClassName("add_info");
+                                    d[0].style.display = "block";
+                                    console.log(d);
+                                }
+                            </script>
+                        </div>
+                        <div class="form-row tab">
+                            <div class="form-group form-icon">
+                                <label for="birth_date">Дата рожденья</label>
+                                <input type="calendar" class="form-input" name="birth_date" id="birth_date" placeholder="ДД-ММ-ГГГГ" />   
+                            </div>
+                            
+                            <!-- <div class="form-radio">
+                                <label for="gender">Gender</label>
+                                <div class="form-flex">
+                                    <input type="radio" name="gender" value="male" id="male" checked="checked" />
+                                    <label for="male">Male</label>
+    
+                                    <input type="radio" name="gender" value="female" id="female" />
+                                    <label for="female">Female</label>
+                                </div>
+                            </div> -->
+                        </div>
+                        <!-- <div class="form-row">
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="password" class="form-input" name="password" id="password"/>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="re_password">Repeat your password</label>
+                                <input type="password" class="form-input" name="re_password" id="re_password"/>
+                            </div>
+                        </div> -->
+                         
+                        <div class="form-group">
+                            <button type="button" name="button" id="nextBtn" class="form-submit" onclick="nextPrev(1)">Далее</button>
+                            <button type="button" class="form-submit" id="prevBtn" onclick="nextPrev(-1)">Назад</button>
+                        </div>
+                            
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+<script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-firestore.js"></script>
+<script type='text/javascript' src='js/countries.js'></script>
+<script type='text/javascript' src='js/signup.js'></script>
+</html>

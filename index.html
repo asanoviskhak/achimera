@@ -1,118 +1,334 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Регистрация</title>
-    <link rel="stylesheet" href="css/style.css">  
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-</head>
-<body>
-    <div class="main">
-        <section class="signup">
-            <!-- <img src="images/signup-bg.jpg" alt=""> -->
+  <head>
+    <title>ACHIMERA &mdash; Помощь по борьбе с вирусом</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,700|Anton" rel="stylesheet">
     
-            <div class="container">
-                <div class="signup-content">
-                    <div style="text-align:justify;">
-                        <h1>Регистрация</h1>
-                        <div style="float: right; margin-top: -60px; margin-right: 40px;">
-                            <span class="step"></span>
-                            <span class="step"></span>
-                            <span class="step"></span>
-                        </div>
-                    </div>
 
-                    <form id="signup-form1" class="signup-form">
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
 
-                        <div class="form-group country tab">
-                            <label for="country">
-                                Страна
-                            </label>
-                            <div class="select-box select">
-                                <select  name="country" id="country" required>
-                                    <option selected="--">--</option>
-                                    <option value="KG">Кыргызстан</option>
-                                    <option value="KZ">Казахстан</option>
-                                    <option value="Узбекистан">Узбекистан</option>
-                                </select>
-                            </div>
-                        </div>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
 
-                        <div class="form-row tab">
-                            <div class="form-text">
-                                <div class="form-group">
-                                    <label for="first_name">Имя</label>
-                                    <input type="text" class="form-input" name="first_name" id="first_name" />
-                                </div>
-                                <div class="form-group">
-                                    <label for="last_name">Фамилия</label>
-                                    <input type="text" class="form-input" name="last_name" id="last_name" />
-                                </div>
-                                <a class="add-info-link" onclick="show()"> Дополнительные контакты ></a>
-                                <div class="add_info">
-                                    <div class="form-group">
-                                        <label for="email">Email</label>
-                                        <input type="email" class="form-input" name="email" id="email"/>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="phone_number">Номер WhatsApp</label>
-                                        <input type="number" class="form-input" name="whatsapp_number" id="whatsapp_number" required/>
-                                    </div>
-                                </div>
-                            </div>
-                            <script>
-                                function show(){
-                                    var d = document.getElementsByClassName("add_info");
-                                    d[0].style.display = "block";
-                                    console.log(d);
-                                }
-                            </script>
-                        </div>
-                        <div class="form-row tab">
-                            <div class="form-group form-icon">
-                                <label for="birth_date">Дата рожденья</label>
-                                <input type="calendar" class="form-input" name="birth_date" id="birth_date" placeholder="ДД-ММ-ГГГГ" />   
-                            </div>
-                            
-                            <!-- <div class="form-radio">
-                                <label for="gender">Gender</label>
-                                <div class="form-flex">
-                                    <input type="radio" name="gender" value="male" id="male" checked="checked" />
-                                    <label for="male">Male</label>
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+
+    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+
+    <link rel="stylesheet" href="css/aos.css">
+
+    <link rel="stylesheet" href="css/style.css">
     
-                                    <input type="radio" name="gender" value="female" id="female" />
-                                    <label for="female">Female</label>
-                                </div>
-                            </div> -->
-                        </div>
-                        <!-- <div class="form-row">
-                            <div class="form-group">
-                                <label for="password">Password</label>
-                                <input type="password" class="form-input" name="password" id="password"/>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="re_password">Repeat your password</label>
-                                <input type="password" class="form-input" name="re_password" id="re_password"/>
-                            </div>
-                        </div> -->
-                         
-                        <div class="form-group">
-                            <button type="button" name="button" id="nextBtn" class="form-submit" onclick="nextPrev(1)">Далее</button>
-                            <button type="button" class="form-submit" id="prevBtn" onclick="nextPrev(-1)">Назад</button>
-                        </div>
-                            
-                    </form>
-                </div>
-            </div>
-        </section>
+    
+  </head>
+  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+  
+  <div class="site-wrap"  id="home-section">
+
+    <div class="site-mobile-menu site-navbar-target">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
     </div>
-</body>
-<script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-firestore.js"></script>
-<script type='text/javascript' src='js/countries.js'></script>
-<script type='text/javascript' src='js/signup.js'></script>
+   
+      
+    <header class="site-navbar js-sticky-header site-navbar-target" role="banner">
+
+      <div class="container">
+        <div class="row align-items-center position-relative">
+          
+            
+            <div class="site-logo">
+              <a href="index.html" class="text-black"><span class="text-primary">ACHIMERA</a>
+            </div>
+            
+              <nav class="site-navigation text-center ml-auto" role="navigation">
+
+                <ul class="site-menu main-menu js-clone-nav ml-auto d-none d-lg-block">
+                  <li><a href="#home-section" class="nav-link">Главная</a></li>
+                  <li><a href="#need-help" class="nav-link">Нужна помощь</a></li>
+                  <li><a href="#give-help" class="nav-link">Хочу помочь</a></li>
+                  <li><a href="#" class="nav-link">COVID-19?</a></li>
+                  <li><a href="#" class="nav-link">О нас</a></li>
+                </ul>
+              </nav>
+          
+            
+
+          <div class="toggle-button d-inline-block d-lg-none"><a href="#" class="site-menu-toggle py-5 js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
+
+        </div>
+      </div>
+      
+    </header>
+    
+    <!-- <div class="owl-carousel slide-one-item">
+      <a href="#"><img src="images/hero_1.jpg" alt="Image" class="img-fluid"></a>
+      <a href="#"><img src="images/hero_2.jpg" alt="Image" class="img-fluid"></a>
+    </div> -->
+    
+    <div class="d-block intro-engage text-center" role="navigation"> <!-- d-md-flex -->
+      <a href="#need-help" class="onhover">
+        <h2>Нужна помощь</h2>
+        <p>Нажмите на этот блок если вам нужны лекарства, врачебная помощь или что-то другое связанное с предыдущими</p>
+      </a>
+      <a href="#give-help" class="onhover">
+        <h2>Хочу помочь</h2>
+        <p>Нажмите на этот блок если вы хотите помочь лекарством, врачебным советом или другими материальными вещами</p>
+      </a>
+      <a class="onhover">
+        <h2>Кто готов помочь</h2>
+        <p>Здесь вы сможете увидеть весь список тех кто ищет помощи</p>
+      </a>
+      <a class="onhover">
+        <h2>Как сохраняться от COVID-19?</h2>
+        <p>Узнайте что такое вирус COVID-19 и как сохраняться от него</p>
+      </a>
+    </div>
+
+    <div class="site-section bg-image overlay-1" id="need-help" style="background-image: url('images/hero_1_no-text.jpg');">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center mb-5">
+            <h2 class="text-uppercase text-white">Нужна помощь</h2>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-lg-6 mb-5">
+            <form >
+              <div class="form-group row country" id="location-list">
+                <div class="col-md-12">
+                  <div>
+                    <label for="country" class="text-white text-uppercase">
+                      Страна
+                    </label>
+                    <select class="form-control" name="country" id="country">
+                      <option selected="--">--</option>
+                      <option value="KG">Кыргызстан</option>
+                      <option value="KZ">Казахстан</option>
+                      <option value="UZ">Узбекистан</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <div class="col-md-6 mb-4 mb-lg-0">
+                  <label for="first_name" class="text-white text-uppercase">
+                    Имя
+                  </label>
+                  <input type="text" id="first_name" name="first_name" class="form-control">
+                </div>
+                <div class="col-md-6">
+                  <label for="first_name" class="text-white text-uppercase">
+                    Фамилия
+                  </label>
+                  <input type="text" id="last_name" name="last_name" class="form-control">
+                </div>
+              </div>
+              
+               <div class="form-group row">
+                <div class="col-md-12">
+                  <label for="category" class="text-white text-uppercase">
+                    Тип помощи
+                  </label>
+                  <select class="form-control" name="category" id="category">
+                    <option value="A" selected>Лекарства</option>
+                    <option value="B">Кислородный концентратор</option>
+                    <option value="C">Финансовая помощь</option>
+                    <option value="D">Консультация</option>
+                    <option value="E">Капельница</option>
+                    <option value="F">Средства защиты</option>
+                    <option value="G">Продукты</option>
+                    <option value="H">Другое</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <div class="col-md-12">
+                  <textarea name="" id="description" class="form-control" placeholder="Опишите свою проблему или то что вам нужно." cols="20" rows="5"></textarea>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <div class="col-md-6 mb-4 mb-lg-0">
+                  <input id="whatsapp" type="tel" class="form-control" placeholder="WhatsApp">
+                </div>
+                <div class="col-md-6">
+                  <input id='phone' type="tel" class="form-control" placeholder="Телефон(если нет WhatsApp)">
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <div class="col-md-6 ml-auto">
+                  <input id="nh_btn" onclick="help(1);" class="btn btn-block btn-primary text-white py-3 px-5" value="Опубликовать">
+                </div>
+              </div>
+
+            </form>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="site-section bg-image overlay-2" id="give-help" style="background-image: url('images/hero_1_no-text.jpg');">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center mb-5">
+            <h2 class="text-uppercase text-white">Хочу помочь</h2>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-lg-6 mb-5">
+            <form >
+              <div class="form-group row country" id="location-list2">
+                <div class="col-md-12">
+                  <div>
+                    <label for="country" class="text-white text-uppercase">
+                      Страна
+                    </label>
+                    <select class="form-control" name="country" id="country2">
+                      <option selected="--">--</option>
+                      <option value="KG">Кыргызстан</option>
+                      <option value="KZ">Казахстан</option>
+                      <option value="UZ">Узбекистан</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col-md-12">
+                  <label for="address" class="text-white text-uppercase">
+                    Уточните адрес
+                  </label>
+                  <input type="text" id="address" name="address" class="form-control">
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col-md-6 mb-4 mb-lg-0">
+                  <label for="first_name2" class="text-white text-uppercase">
+                    Имя
+                  </label>
+                  <input type="text" id="first_name2" name="first_name" class="form-control">
+                </div>
+                <div class="col-md-6">
+                  <label for="last_name2" class="text-white text-uppercase">
+                    Фамилия
+                  </label>
+                  <input type="text" id="last_name2" name="last_name" class="form-control">
+                </div>
+              </div>
+              
+               <div class="form-group row">
+                <div class="col-md-12">
+                  <label for="category" class="text-white text-uppercase">
+                    Тип помощи
+                  </label>
+                  <select class="form-control" name="category" id="category2">
+                    <option value="A" selected>Лекарства</option>
+                    <option value="B">Кислородный концентратор</option>
+                    <option value="C">Финансовая помощь</option>
+                    <option value="D">Консультация</option>
+                    <option value="E">Капельница</option>
+                    <option value="F">Средства защиты</option>
+                    <option value="G">Продукты</option>
+                    <option value="H">Другое</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <div class="col-md-12">
+                  <textarea name="" id="description2" class="form-control" placeholder="Опишите свою проблему или то что вам нужно." cols="20" rows="5"></textarea>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <div class="col-md-6 mb-4 mb-lg-0">
+                  <input id="whatsapp2" type="tel" class="form-control" placeholder="WhatsApp">
+                </div>
+                <div class="col-md-6">
+                  <input id='phone2' type="tel" class="form-control" placeholder="Телефон(если нет WhatsApp)">
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <div class="col-md-6 ml-auto">
+                  <input id="nh_btn" onclick="help(0);" class="btn btn-block btn-primary text-white py-3 px-5" value="Опубликовать">
+                </div>
+              </div>
+
+            </form>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 ml-auto">
+
+      
+            <h2 class="footer-heading mb-2 mt-3">Следите за нами:</h2>
+              <a href="#about-section" class="smoothscroll pl-0 pr-3"><span class="icon-facebook"></span></a>
+              <a href="#" class="pl-3 pr-3"><span class="icon-twitter"></span></a>
+              <a href="#" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
+              <a href="#" class="pl-3 pr-3"><span class="icon-linkedin"></span></a>
+        </div>
+              <div class="col-md-6 ml-auto">
+                <h2 class="footer-heading mb-2 mt-3">Навигация:</h2>
+                
+                  <a href="#">About Us</a> |
+                  <a href="#">Testimonials</a> |
+                  <a href="#">Terms of Service</a> |
+                  <a href="#">Privacy</a> |
+                  <a href="#">Contact Us</a> 
+                
+              </div>
+        </div>
+        <div class="row pt-5 mt-5 text-center">
+          <div class="col-md-12">
+            <div class="border-top pt-5">
+            <p>
+    
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This web-site was made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://bulut.services" target="_blank" >Bulut Services</a>
+            
+            </p>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </footer>
+
+  </div>
+  
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/jquery.sticky.js"></script>
+  <script src="js/jquery.waypoints.min.js"></script>
+  <script src="js/jquery.animateNumber.min.js"></script>
+  <script src="js/aos.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-firestore.js"></script>
+  <script src="js/main.js"></script>
+    
+  </body>
 </html>

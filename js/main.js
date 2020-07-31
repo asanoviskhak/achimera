@@ -32,7 +32,7 @@
 		description = $('#description').val();
 		whatsapp = $('#whatsapp').val();
 		phone = $('#phone').val();
-		rgn = document.getElementById("регион");
+		rgn = document.getElementById(country+"-регион");
 		region = rgn.options[rgn.selectedIndex].innerHTML;
 		nUser = needhelp.doc(country).collection(region);
 	  }
@@ -46,8 +46,9 @@
 		description = $('#description2').val();
 		whatsapp = $('#whatsapp2').val();
 		phone = $('#phone2').val();
-		rgn = document.getElementById("регион2");
+		rgn = document.getElementById(country+"-регион2");
 		region = rgn.options[rgn.selectedIndex].innerHTML;
+		console.log(country, region);
 		nUser = givehelp.doc(country).collection(region);
 	  }
 	  if (description.length==0) description+="Нет описания";
@@ -135,7 +136,7 @@
     var label = $('<label>');
 	label.text(name);
 	label.addClass('text-white mt-2 mb-1 text-uppercase');
-	var select = $(`<select id=${name}>`);
+	var select = $('<select id="'+data.name+"-"+name+'">');
 	select.addClass('form-control');
     var option = $('<option>');
     select.append(option);
@@ -156,7 +157,7 @@ function buildSelect2(name, data, childs) {
     var label = $('<label>');
 	label.text(name);
 	label.addClass('text-white mt-2 mb-1 text-uppercase');
-	var select = $(`<select id=${name}2>`);
+	var select = $('<select id="'+data.name+"-"+name+'2">');
 	select.addClass('form-control');
     var option = $('<option>');
     select.append(option);
@@ -173,7 +174,7 @@ function buildSelect2(name, data, childs) {
 }
 function buildSelect3(name, data, childs) {
     var div = $('<div>');
-	div.addClass('hidden autoSelect col-md-8 ' + data.name + ' ' + name);
+	div.addClass('hidden autoSelect col-md-12 ' + data.name + ' ' + name);
     var label = $('<label>');
 	label.text(name);
 	label.addClass('text-black mt-2 mb-1 text-uppercase');
@@ -214,11 +215,10 @@ function buildSelect3(name, data, childs) {
       hideAutoSelect('город');
       var div = $('div.autoSelect.'+v);
       div.removeClass('hidden');
-      var select = $('select', div);
-      if (select.val()) $('div.autoSelect.'+select.val()).removeClass('hidden');
+	  var select = $('select', div);
+	  if (select.val()) $('div.autoSelect.'+select.val()).removeClass('hidden');
     }
   }
-  
   function updateCities() {
     var v = $(this).val();
     if (v) {
@@ -243,9 +243,12 @@ var showTable = function () {
 		givehelp.doc(country).collection(region).get().then(function(querySnapshot) {
 			querySnapshot.forEach(function(doc) {
 				item = doc.data();
+				var options = {
+					day:'numeric', month:'numeric', year:'numeric', hour: "2-digit", minute:'2-digit'
+				}
 				documents.push({
 					"region": item.regionCity,
-					"date":(new Date(item.timestamp.seconds*1000).toLocaleDateString()),
+					"date":(new Date(item.timestamp.seconds*1000).toLocaleDateString('en-GB', options)),
 					"category": item.category,
 					"description": item.description,
 					"name":item.firstName + " "+item.lastName,
@@ -306,9 +309,12 @@ var showTable = function () {
 			givehelp.doc(country).collection(values.name).get().then(function(querySnapshot) {
 				querySnapshot.forEach(function(doc) {
 					item = doc.data();
+					var options = {
+						day:'numeric', month:'numeric', year:'numeric', hour: "2-digit", minute:'2-digit'
+					}
 					documents.push({
 						"region": item.regionCity,
-						"date":(new Date(item.timestamp.seconds*1000).toLocaleDateString()),
+						"date":(new Date(item.timestamp.seconds*1000).toLocaleDateString('en-GB',options)),
 						"category": item.category,
 						"description": item.description,
 						"name":item.firstName + " "+item.lastName,
@@ -371,6 +377,10 @@ var showTable = function () {
 }
   
 
+function helper(val) {
+	help(val);
+	$('#modalCenter1').modal('show');
+}
 
 //////////////////////////////////////////////////////////////////
 

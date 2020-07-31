@@ -4,7 +4,6 @@
  	once: true
  });
 
-
  var firebaseConfig = {
 	apiKey: "AIzaSyB8rQLBtyQi_o6qLF0LZ6lxRYp1-HILn0I",
 	authDomain: "achimera-01.firebaseapp.com",
@@ -22,10 +21,10 @@
 	// Save a new recommendation to the database, using the input in the form
 	function help(ch) {
 	  // Get input values from each of the form elements
-	  var cntr, country, address, cat, category, f_name, l_name, description, whatsapp, phone, nUser, rgn, region;
+	  var cntr, country, address, cat, category, f_name, l_name, description, whatsapp, phone, nUser, rgn, region, time;
 	  if (ch===1){
 		cntr = document.getElementById("country");
-		country = cntr.options[cntr.selectedIndex].innerHTML;
+		country = cntr.options[cntr.selectedIndex].value;
 		cat = document.getElementById("category");
 		category = cat.options[cat.selectedIndex].innerHTML;
 		f_name = $('#first_name').val();
@@ -39,7 +38,7 @@
 	  }
 	  else if (ch===0){
 		cntr = document.getElementById("country2");
-		country = cntr.options[cntr.selectedIndex].innerHTML;
+		country = cntr.options[cntr.selectedIndex].value;
 		cat = document.getElementById("category2");
 		category = cat.options[cat.selectedIndex].innerHTML;
 		f_name = $('#first_name2').val();
@@ -50,19 +49,17 @@
 		rgn = document.getElementById("регион2");
 		region = rgn.options[rgn.selectedIndex].innerHTML;
 		nUser = givehelp.doc(country).collection(region);
-		address = $('#address').val();
 	  }
-	  
 	  nUser.add({
 		"country": country,
 		"regionCity": region,
-		"address": address,
 		"description": description,
 		"category": category,
 		"firstName": f_name,
 		"lastName": l_name,
 		"whatsApp": whatsapp,
-		"phone":phone
+		"phone":phone,
+		"timestamp":firebase.firestore.Timestamp.now()
 	  });
 	};
 
@@ -168,13 +165,34 @@ function buildSelect2(name, data, childs) {
 	div.append(label);
 	div.append(select);
 	$('#location-list2').append(div);
-
+}
+function buildSelect3(name, data, childs) {
+    var div = $('<div>');
+	div.addClass('hidden autoSelect col-md-12 ' + data.name + ' ' + name);
+    var label = $('<label>');
+	label.text(name);
+	label.addClass('text-black mt-2 mb-1 text-uppercase');
+	var select = $(`<select id=${name}3>`);
+	select.addClass('form-control');
+    var option = $('<option>');
+    select.append(option);
+    data.childs.forEach(function (child) {
+       option = $('<option>');
+       option.val(child.name);
+       option.text(child.name);
+       select.append(option);
+    });
+    //if (childs) select.on('change', updateCities);
+	div.append(label);
+	div.append(select);
+	$('#location-list3').append(div);
 }
   
   function buildForms(data) {
     data.countries.forEach(function (country) {
 	   buildSelect('регион', country, true);
 	   buildSelect2('регион', country, true);
+	   buildSelect3('регион', country, true);
     //    country.childs.forEach(function (state) {
     //      buildSelect('город', state);
     //    });
@@ -203,15 +221,166 @@ function buildSelect2(name, data, childs) {
       $('div.autoSelect.'+v).removeClass('hidden');
     }
   }
+////////////////////////////////////////////////////////////////////
+function textFormatter(value) {
+	return '<span style="word-wrap: break-word;">'+value+'</span>';
+}
 
 
+var showTable = function () {
+	var cntr = document.getElementById("country3");
+	var country = cntr.options[cntr.selectedIndex].value;
+	var rgn = document.getElementById("регион3");
+	var region = rgn.options[rgn.selectedIndex].innerHTML;
+	var documents = [];
+	var item;
+	var $t_table = $('#table-give');
+	if (region.length>=2){
+		givehelp.doc(country).collection(region).get().then(function(querySnapshot) {
+			querySnapshot.forEach(function(doc) {
+				item = doc.data();
+				documents.push({
+					"region": item.regionCity,
+					"date":(new Date(item.timestamp.seconds*1000).toLocaleDateString()),
+					"category": item.category,
+					"description": item.description,
+					"name":item.firstName + " "+item.lastName,
+					"contacts": '<span class="icon-whatsapp"></span> ' + item.whatsApp + '<br> <span class="icon-phone"></span> '+ item.phone,
+				}
+				);
+			});
+		}).then(function(docs){
+			if (documents.length!==0){
+				console.log(documents);
+				var initTable = function() {
+					$('#give-placeholder').addClass('hidden');
+					$t_table.bootstrapTable({
+					data: documents,
+					locale: "ru-RU",
+					exportTypes: ['json', 'excel'],
+					columns: [
+							{
+								width: "150",
+								unitWidth: "px",
+								title: 'Регион',
+								field: 'region',
+								filterControl: 'select',
+								valign: 'middle',
+							}, {
+								title: 'Дата',
+								field: 'date',
+								align: 'center',
+								valign: 'middle',
+								sortable: true,
+							}, {
+								width: "300",
+								unitWidth: "px",
+								title: 'Категория',
+								field: 'category',	
+								filterControl: 'select',
+								valign: 'middle',
+							}, {
+								width: "350",
+								unitWidth: "px",
+								field: 'description',
+								title: 'Описание',
+								formatter: textFormatter
+							}, {
+								field: 'contacts',
+								title: 'Контакты',
+							}, {
+								field: "name" ,
+								title: 'Имя',
+							},
+						]
+					})
+				  }
+				initTable();
+			}
+		});
+	}
+	else{
+		var d = data.countries.find( record => record.name === country);
+		var i;
+		d.childs.forEach(function (values) {
+			givehelp.doc(country).collection(values.name).get().then(function(querySnapshot) {
+				querySnapshot.forEach(function(doc) {
+					item = doc.data();
+					documents.push({
+						"region": item.regionCity,
+						"date":(new Date(item.timestamp.seconds*1000).toLocaleDateString()),
+						"category": item.category,
+						"description": item.description,
+						"name":item.firstName + " "+item.lastName,
+						"contacts": '<span class="icon-whatsapp"></span> ' + item.whatsApp + '<br> <span class="icon-phone"></span> '+ item.phone,
+					}
+					);
+				});
+			}).then(function(docs){
+				console.log(documents);
+				if (documents.length!==0){
+					$('#give-placeholder').addClass('hidden');
+					var initTable = function() {
+						$t_table.bootstrapTable({
+						data: documents,
+						locale: "ru-RU",
+						exportTypes: ['json', 'excel'],
+						columns: [
+								{
+									width: "150",
+									unitWidth: "px",
+									title: 'Регион',
+									field: 'region',
+									filterControl: 'select',
+									valign: 'middle',
+								}, {
+									title: 'Дата',
+									field: 'date',
+									align: 'center',
+									valign: 'middle',
+									sortable: true,
+								}, {
+									width: "300",
+									unitWidth: "px",
+									title: 'Категория',
+									field: 'category',	
+									filterControl: 'select',
+									valign: 'middle',
+								}, {
+									width: "350",
+									unitWidth: "px",
+									field: 'description',
+									title: 'Описание',
+									formatter: textFormatter
+								}, {
+									field: 'contacts',
+									title: 'Контакты',
+								}, {
+									field: "name" ,
+									title: 'Имя',
+								},
+							]
+						})
+					  }
+					initTable();
+				}
+			});
+		});
+	}
+}
+  
+
+
+//////////////////////////////////////////////////////////////////
 
 jQuery(document).ready(function($) {
-
+	$('#search-give').on('click', showTable);
 	
 	buildForms(data);
     $('#country').on('change', updateStates);
 	$('#country2').on('change', updateStates);
+	$('#country3').on('change', updateStates);
+		
 	"use strict";
 	
 	var siteMenuClone = function() {
@@ -504,7 +673,6 @@ jQuery(document).ready(function($) {
 
 	}
 	counter();
-
 
 
 });

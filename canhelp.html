@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>ACHIMERA &mdash; Помощь по борьбе с вирусом</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,700|Anton" rel="stylesheet">
+    
+    <link rel="stylesheet" href="dist/bootstrap-table.css">
+    <link rel="stylesheet" href="dist/themes/bootstrap-table/bootstrap-table.css">
+    <link rel="stylesheet" href="dist/extensions/filter-control/bootstrap-table-filter-control.min.css">
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+
+   
+
+    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+
+    <link rel="stylesheet" href="css/aos.css">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link href="css/select2.min.css" rel="stylesheet" media="all">
+
+    
+    <link href="css/animate.css" rel="stylesheet" media="all">
+    
+    
+  </head>
+  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+  
+  <div class="site-wrap"  id="home-section">
+
+    <div class="site-mobile-menu site-navbar-target">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+   
+      
+    <header class="site-navbar js-sticky-header site-navbar-target" role="banner">
+
+      <div class="container">
+        <div class="row align-items-center position-relative">
+          
+            
+            <div class="site-logo">
+              <a href="index.html" class="text-black"><span class="text-primary">ACHIMERA</a>
+            </div>
+            
+              <nav class="site-navigation text-center ml-auto" role="navigation">
+
+                <ul class="site-menu main-menu js-clone-nav ml-auto d-none d-lg-block">
+                  <li><a href="index.html#home-section" class="nav-link">Главная</a></li>
+                  <li><a href="index.html#need-help" class="nav-link">Нужна помощь</a></li>
+                  <li><a href="#give-help" class="nav-link">Хочу помочь</a></li>
+                  <li><a href="#" class="nav-link">COVID-19?</a></li>
+                  <li><a href="#" class="nav-link">О нас</a></li>
+                </ul>
+              </nav>
+          
+            
+
+          <div class="toggle-button d-inline-block d-lg-none"><a href="#" class="site-menu-toggle py-5 js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
+
+        </div>
+      </div>      
+    </header>
+    <section class="site-section mb-0">
+      <div class="container justify-content-center">
+        <form>
+          <div class="row">
+            <div class="col-12 mb-5">
+              <h2 class="text-uppercase text-black">Список тех кто готов помочь</h2>
+              <h5>Выберите страну, регион и нажмите "Поиск" 
+              </h5>
+            </div>
+          </div>
+          <div class="form-group row " id="search-query1">
+            <div class="col-md-4 ">
+                <div class="form-group row country" id="location-list3">
+                  <div class="col-md-12">
+                      <label for="country" class="text-black text-uppercase">
+                        Страна
+                      </label>
+                      <select class="form-control" name="country" id="country3">
+                        <option selected="--">--</option>
+                        <option value="KG">Кыргызстан</option>
+                        <option value="KZ">Казахстан</option>
+                        <option value="UZ">Узбекистан</option>
+                      </select>
+                  </div>
+              </div>
+              <div>
+                <input id="search-give" onclick="location.href='#give-help';" class="btn btn-block btn-primary text-white py-3 px-5" value="Поиск">
+            </div>
+            
+          </div>
+        </form>
+      </div>
+    </section>
+    <div class="site-section mb-5" id="give-help">
+      <div class="container mt-0">
+        <div id="give-placeholder">
+          <h3>Ничего не найдено :(</h3>
+        </div>
+      </div>
+      <div class="container-fluid">    
+        <div class="row">
+          <div id="admin" class="col-12">
+            <table 
+            id="table-give"
+            data-search="true"
+            data-toggle = "table-give"
+            data-minimum-count-columns="2"
+            data-page-list="[10, 25, 50, 100, ALL]"
+            data-pagination="true"
+            data-show-export="true"
+            data-search-align="left"
+            data-sort-name="date"
+            data-sort-order="desc"
+            data-buttons-class="btn btn-block btn-primary text-black py-2.8 px-3.8"
+            data-filter-control="true"
+            data-mobile-responsive="true"
+            data-check-on-init="true"
+            >
+            
+              <!-- <thead>
+                <tr>
+                  <th data-field="country">Страна</th>
+                  <th data-field="date">Дата</th>
+                  <th data-field="description">Описание</th>
+                  <th data-field="name">Имя</th>
+                  <th data-field="wa">WhatsApp</th>
+                  <th data-field="phone">Телефон</th>
+                </tr>
+              </thead> -->
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 ml-auto">
+
+      
+            <h2 class="footer-heading mb-2 mt-3">Следите за нами:</h2>
+              <a href="#about-section" class="smoothscroll pl-0 pr-3"><span class="icon-facebook"></span></a>
+              <a href="#" class="pl-3 pr-3"><span class="icon-twitter"></span></a>
+              <a href="#" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
+              <a href="#" class="pl-3 pr-3"><span class="icon-linkedin"></span></a>
+        </div>
+              <div class="col-md-6 ml-auto">
+                <h2 class="footer-heading mb-2 mt-3">Навигация:</h2>
+                
+                  <a href="#">About Us</a> |
+                  <a href="#">Testimonials</a> |
+                  <a href="#">Terms of Service</a> |
+                  <a href="#">Privacy</a> |
+                  <a href="#">Contact Us</a> 
+                
+              </div>
+        </div>
+        <div class="row pt-5 mt-5 text-center">
+          <div class="col-md-12">
+            <div class="border-top pt-5">
+            <p>
+    
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This web-site was made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://bulut.services" target="_blank" >Bulut Services</a>
+            
+            </p>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </footer>
+
+  </div>
+  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/jquery.sticky.js"></script>
+  <script src="js/jquery.waypoints.min.js"></script>
+  <script src="js/jquery.animateNumber.min.js"></script>
+  <script src="js/aos.js"></script>
+  <script src="js/slick.min.js"></script>
+  <script src="js/wow.min.js"></script>
+  <script src="js/animsition.min.js"></script>
+  <script src="js/select2.min.js"></script>
+  <script src="https://unpkg.com/tableexport.jquery.plugin/tableExport.min.js"></script>
+  <script src="dist/bootstrap-table.js"></script>
+  <script src="dist/themes/bootstrap-table/bootstrap-table.js"></script>
+  <script src="dist/locale/bootstrap-table-ru-RU.min.js"></script>
+  <script src="dist/extensions/mobile/bootstrap-table-mobile.min.js"></script>
+  <script src="dist/extensions/export/bootstrap-table-export.js"></script>
+  <script src="dist/extensions/filter-control/utils.min.js"></script>
+  <script src="dist/extensions/filter-control/bootstrap-table-filter-control.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-firestore.js"></script>
+  <script src="js/main.js"></script>
+    
+  </body>
+</html>

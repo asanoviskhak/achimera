@@ -1,6 +1,6 @@
     /*
     Flaticon icon font: Flaticon
-    Creation date: 01/05/2019 11:34
+    Creation date: 31/07/2020 10:47
     */
 
     @font-face {
@@ -37,16 +37,14 @@
   font-smoothing: antialiased;
     }
 
-    .flaticon-piggy-bank:before { content: "\f100"; }
-.flaticon-blood:before { content: "\f101"; }
-.flaticon-food:before { content: "\f102"; }
-.flaticon-donation:before { content: "\f103"; }
-.flaticon-dollar:before { content: "\f104"; }
-.flaticon-unity:before { content: "\f105"; }
+    .flaticon-tiktok:before { content: "\f100"; }
+.flaticon-telegram:before { content: "\f101"; }
+.flaticon-instagram:before { content: "\f102"; }
+.flaticon-whatsapp:before { content: "\f103"; }
+.flaticon-youtube:before { content: "\f104"; }
     
-    $font-Flaticon-piggy-bank: "\f100";
-    $font-Flaticon-blood: "\f101";
-    $font-Flaticon-food: "\f102";
-    $font-Flaticon-donation: "\f103";
-    $font-Flaticon-dollar: "\f104";
-    $font-Flaticon-unity: "\f105";
+    $font-Flaticon-tiktok: "\f100";
+    $font-Flaticon-telegram: "\f101";
+    $font-Flaticon-instagram: "\f102";
+    $font-Flaticon-whatsapp: "\f103";
+    $font-Flaticon-youtube: "\f104";

@@ -223,7 +223,7 @@ a {
 
 h1, h2, h3, h4, h5,
 .h1, .h2, .h3, .h4, .h5 {
-  font-family: "Anton", sans-serif; }
+  font-family: "Oswald", sans-serif; }
 
 .border-2 {
   border-width: 2px; }
@@ -865,7 +865,7 @@ h1, h2, h3, h4, h5,
   position: relative; }
   .intro-engage > a h2 {
     color: #fff;
-    font-family: "Anton", sans-serif;
+    font-family: "Oswald", sans-serif;
     text-transform: uppercase;
     letter-spacing: .1rem; }
   .intro-engage > a p {

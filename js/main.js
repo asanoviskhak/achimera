@@ -50,6 +50,11 @@
 		region = rgn.options[rgn.selectedIndex].innerHTML;
 		nUser = givehelp.doc(country).collection(region);
 	  }
+	  if (description.length==0) description+="Нет описания";
+	  if (whatsapp.length==0) whatsapp+="Нет номера";
+	  if (phone.length==0) phone+="Нет номера";
+	  if (f_name.length==0) f_name+="-";
+	  if (l_name.length==0) l_name+="-";
 	  nUser.add({
 		"country": country,
 		"regionCity": region,
@@ -126,7 +131,7 @@
   
   function buildSelect(name, data, childs) {
     var div = $('<div>');
-	div.addClass('hidden autoSelect col-md-12 ' + data.name + ' ' + name);
+	div.addClass('hidden autoSelect col-md-8 ' + data.name + ' ' + name);
     var label = $('<label>');
 	label.text(name);
 	label.addClass('text-white mt-2 mb-1 text-uppercase');
@@ -147,7 +152,7 @@
 }
 function buildSelect2(name, data, childs) {
     var div = $('<div>');
-	div.addClass('hidden autoSelect col-md-12 ' + data.name + ' ' + name);
+	div.addClass('hidden autoSelect col-md-8 ' + data.name + ' ' + name);
     var label = $('<label>');
 	label.text(name);
 	label.addClass('text-white mt-2 mb-1 text-uppercase');
@@ -168,7 +173,7 @@ function buildSelect2(name, data, childs) {
 }
 function buildSelect3(name, data, childs) {
     var div = $('<div>');
-	div.addClass('hidden autoSelect col-md-12 ' + data.name + ' ' + name);
+	div.addClass('hidden autoSelect col-md-8 ' + data.name + ' ' + name);
     var label = $('<label>');
 	label.text(name);
 	label.addClass('text-black mt-2 mb-1 text-uppercase');
@@ -234,7 +239,6 @@ var showTable = function () {
 	var region = rgn.options[rgn.selectedIndex].innerHTML;
 	var documents = [];
 	var item;
-	var $t_table = $('#table-give');
 	if (region.length>=2){
 		givehelp.doc(country).collection(region).get().then(function(querySnapshot) {
 			querySnapshot.forEach(function(doc) {
@@ -250,52 +254,53 @@ var showTable = function () {
 				);
 			});
 		}).then(function(docs){
-			if (documents.length!==0){
-				console.log(documents);
-				var initTable = function() {
-					$('#give-placeholder').addClass('hidden');
-					$t_table.bootstrapTable({
-					data: documents,
-					locale: "ru-RU",
-					exportTypes: ['json', 'excel'],
-					columns: [
-							{
-								width: "150",
-								unitWidth: "px",
-								title: 'Регион',
-								field: 'region',
-								filterControl: 'select',
-								valign: 'middle',
-							}, {
-								title: 'Дата',
-								field: 'date',
-								align: 'center',
-								valign: 'middle',
-								sortable: true,
-							}, {
-								width: "300",
-								unitWidth: "px",
-								title: 'Категория',
-								field: 'category',	
-								filterControl: 'select',
-								valign: 'middle',
-							}, {
-								width: "350",
-								unitWidth: "px",
-								field: 'description',
-								title: 'Описание',
-								formatter: textFormatter
-							}, {
-								field: 'contacts',
-								title: 'Контакты',
-							}, {
-								field: "name" ,
-								title: 'Имя',
-							},
-						]
-					})
-				  }
-				initTable();
+			var $t_table = $('#table-give');
+			console.log(documents);
+			$('#give-placeholder').addClass('hidden');
+			$t_table.bootstrapTable({
+			locale: "ru-RU",
+			exportTypes: ['json', 'excel'],
+			columns: [
+					{
+						width: "150",
+						unitWidth: "px",
+						title: 'Регион',
+						field: 'region',
+						filterControl: 'select',
+						valign: 'middle',
+					}, {
+						title: 'Дата',
+						field: 'date',
+						align: 'center',
+						valign: 'middle',
+						sortable: true,
+					}, {
+						width: "300",
+						unitWidth: "px",
+						title: 'Категория',
+						field: 'category',	
+						filterControl: 'select',
+						valign: 'middle',
+					}, {
+						width: "350",
+						unitWidth: "px",
+						field: 'description',
+						title: 'Описание',
+						formatter: textFormatter
+					}, {
+						field: 'contacts',
+						title: 'Контакты',
+					}, {
+						field: "name" ,
+						title: 'Имя',
+					},
+				]
+			})
+			if (documents.length==0){
+				$t_table.bootstrapTable('load', documents);
+			}
+			else{
+				$t_table.bootstrapTable('load', documents);
 			}
 		});
 	}
@@ -317,52 +322,53 @@ var showTable = function () {
 					);
 				});
 			}).then(function(docs){
-				console.log(documents);
-				if (documents.length!==0){
-					$('#give-placeholder').addClass('hidden');
-					var initTable = function() {
-						$t_table.bootstrapTable({
-						data: documents,
-						locale: "ru-RU",
-						exportTypes: ['json', 'excel'],
-						columns: [
-								{
-									width: "150",
-									unitWidth: "px",
-									title: 'Регион',
-									field: 'region',
-									filterControl: 'select',
-									valign: 'middle',
-								}, {
-									title: 'Дата',
-									field: 'date',
-									align: 'center',
-									valign: 'middle',
-									sortable: true,
-								}, {
-									width: "300",
-									unitWidth: "px",
-									title: 'Категория',
-									field: 'category',	
-									filterControl: 'select',
-									valign: 'middle',
-								}, {
-									width: "350",
-									unitWidth: "px",
-									field: 'description',
-									title: 'Описание',
-									formatter: textFormatter
-								}, {
-									field: 'contacts',
-									title: 'Контакты',
-								}, {
-									field: "name" ,
-									title: 'Имя',
-								},
-							]
-						})
-					  }
-					initTable();
+				var $t_table = $('#table-give');
+				$('#give-placeholder').addClass('hidden');	
+				$t_table.bootstrapTable({
+				locale: "ru-RU",
+				exportTypes: ['json', 'excel'],
+				columns: [
+						{
+							width: "150",
+							unitWidth: "px",
+							title: 'Регион',
+							field: 'region',
+							filterControl: 'select',
+							valign: 'middle',
+						}, {
+							title: 'Дата',
+							field: 'date',
+							align: 'center',
+							valign: 'middle',
+							sortable: true,
+						}, {
+							width: "300",
+							unitWidth: "px",
+							title: 'Категория',
+							field: 'category',	
+							filterControl: 'select',
+							valign: 'middle',
+						}, {
+							width: "350",
+							unitWidth: "px",
+							field: 'description',
+							title: 'Описание',
+							formatter: textFormatter
+						}, {
+							field: 'contacts',
+							title: 'Контакты',
+						}, {
+							field: "name" ,
+							title: 'Имя',
+						},
+					]
+				})
+			
+				if (documents.length==0){
+					$t_table.bootstrapTable('load', documents);
+				}
+				else{
+					$t_table.bootstrapTable('load', documents);
 				}
 			});
 		});

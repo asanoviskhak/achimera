@@ -106,19 +106,19 @@
         <div class="row">
           <div class="col-12 text-center mb-5">
             <h2 class="text-uppercase text-white">Нужна помощь</h2>
-            <p>Заполните все поля - напишите какая конкретно вам нужна помощь и <br>нажмите "Опубликовать"</p>
+            <p>Заполните все поля - напишите какая конкретно вам нужна помощь и <br>нажмите на "Опубликовать"</p>
           </div>
         </div>
         <div class="row justify-content-center">
           <div class="col-lg-6 mb-5">
             <form >
               <div class="form-group row country" id="location-list">
-                <div class="col-md-12">
+                <div class="col-md-8">
                   <div>
                     <label for="country" class="text-white text-uppercase">
                       Страна
                     </label>
-                    <select class="form-control" name="country" id="country">
+                    <select class="form-control" name="country" id="country" required>
                       <option selected="--">--</option>
                       <option value="KG">Кыргызстан</option>
                       <option value="KZ">Казахстан</option>
@@ -130,16 +130,16 @@
 
               <div class="form-group row">
                 <div class="col-md-6 mb-4 mb-lg-0">
-                  <label for="first_name" class="text-white text-uppercase">
+                  <label for="first_name" class="text-white text-uppercase" >
                     Имя
                   </label>
-                  <input type="text" id="first_name" name="first_name" class="form-control">
+                  <input type="text" id="first_name" name="first_name" class="form-control" required>
                 </div>
                 <div class="col-md-6">
                   <label for="first_name" class="text-white text-uppercase">
                     Фамилия
                   </label>
-                  <input type="text" id="last_name" name="last_name" class="form-control">
+                  <input type="text" id="last_name" name="last_name" class="form-control" required>
                 </div>
               </div>
               
@@ -148,7 +148,7 @@
                   <label for="category" class="text-white text-uppercase">
                     Тип помощи
                   </label>
-                  <select class="form-control" name="category" id="category">
+                  <select class="form-control" name="category" id="category" required>
                     <option value="A" selected>Лекарства</option>
                     <option value="B">Кислородный концентратор</option>
                     <option value="C">Финансовая помощь</option>
@@ -163,22 +163,23 @@
 
               <div class="form-group row">
                 <div class="col-md-12">
-                  <textarea name="" id="description" class="form-control" placeholder="Опишите свою проблему или то что вам нужно." cols="20" rows="5"></textarea>
+                  <textarea name="" id="description" class="form-control" placeholder="Опишите свою проблему или то что вам нужно." cols="20" rows="5" required></textarea>
                 </div>
               </div>
 
               <div class="form-group row">
                 <div class="col-md-6 mb-4 mb-lg-0">
-                  <input id="whatsapp" type="tel" class="form-control" placeholder="WhatsApp">
+                  <input id="whatsapp" type="tel" class="form-control" placeholder="WhatsApp" required>
                 </div>
                 <div class="col-md-6">
-                  <input id='phone' type="tel" class="form-control" placeholder="Телефон(если нет WhatsApp)">
+                  <input id='phone' type="tel" class="form-control" placeholder="Телефон(если нет WhatsApp)" required>
                 </div>
               </div>
 
               <div class="form-group row">
                 <div class="col-md-6 ml-auto">
-                  <input id="nh_btn" onclick="help(1);" class="btn btn-block btn-primary text-white py-3 px-5" value="Опубликовать">
+                  <p class="text-white">Убедитесь что все поля заполнены правильно и нажмите на "Опубликовать"</p>
+                  <input id="nh_btn" onclick="help(1);" class="btn btn-block btn-primary text-white py-3 px-5" value="Опубликовать" data-toggle="modal" data-target="#modalCenter1">
                 </div>
               </div>
 
@@ -201,11 +202,11 @@
           <div class="col-lg-6 mb-5">
             <form >
               <div class="form-group row country" id="location-list2">
-                <div class="col-md-12">
+                <div class="col-md-8">
                     <label for="country" class="text-white text-uppercase">
                       Страна
                     </label>
-                    <select class="form-control" name="country" id="country2">
+                    <select class="form-control is-valid" name="country" id="country2" required>
                       <option selected="--">--</option>
                       <option value="KG">Кыргызстан</option>
                       <option value="KZ">Казахстан</option>
@@ -214,25 +215,17 @@
                 </div>
               </div>
               <div class="form-group row">
-                <div class="col-md-12">
-                  <label for="address" class="text-white text-uppercase">
-                    Уточните адрес
-                  </label>
-                  <input type="text" id="address" name="address" class="form-control">
-                </div>
-              </div>
-              <div class="form-group row">
                 <div class="col-md-6 mb-4 mb-lg-0">
                   <label for="first_name2" class="text-white text-uppercase">
                     Имя
                   </label>
-                  <input type="text" id="first_name2" name="first_name" class="form-control">
+                  <input type="text" id="first_name2" name="first_name" class="form-control" required>
                 </div>
                 <div class="col-md-6">
                   <label for="last_name2" class="text-white text-uppercase">
                     Фамилия
                   </label>
-                  <input type="text" id="last_name2" name="last_name" class="form-control">
+                  <input type="text" id="last_name2" name="last_name" class="form-control" required>
                 </div>
               </div>
               
@@ -241,7 +234,7 @@
                   <label for="category" class="text-white text-uppercase">
                     Тип помощи
                   </label>
-                  <select class="form-control" name="category" id="category2">
+                  <select class="form-control" name="category" id="category2" required>
                     <option value="A" selected>Лекарства</option>
                     <option value="B">Кислородный концентратор</option>
                     <option value="C">Финансовая помощь</option>
@@ -262,16 +255,17 @@
 
               <div class="form-group row">
                 <div class="col-md-6 mb-4 mb-lg-0">
-                  <input id="whatsapp2" type="tel" class="form-control" placeholder="WhatsApp">
+                  <input id="whatsapp2" type="tel" class="form-control" placeholder="WhatsApp" required>
                 </div>
                 <div class="col-md-6">
-                  <input id='phone2' type="tel" class="form-control" placeholder="Телефон(если нет WhatsApp)">
+                  <input id='phone2' type="tel" class="form-control" placeholder="Телефон(если нет WhatsApp)" required>
                 </div>
               </div>
 
               <div class="form-group row">
                 <div class="col-md-6 ml-auto">
-                  <input id="nh_btn" onclick="help(0);" class="btn btn-block btn-primary text-white py-3 px-5" value="Опубликовать">
+                  <p class="text-white">Убедитесь что все поля заполнены правильно и нажмите "Опубликовать"</p>
+                  <input type="submit" id="nh_btn" onclick="help(0);" class="btn btn-block btn-primary text-white py-3 px-5" value="Опубликовать" data-toggle="modal" data-target="#modalCenter1">
                 </div>
               </div>
 
@@ -281,7 +275,43 @@
         </div>
       </div>
     </div>
-    
+    <div class="modal fade" id="modalCenter1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title text-black" id="exampleModalLongTitle">Опубликовано!</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            Публикация вашего объявления прошла успешно! Нажмите "Закрыть" что-бы вернуться на главную.
+          </div>
+          <div class="modal-footer">
+            <button type="button" onclick="location.href='index.html';" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="modalCenter2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            ...
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
     <footer class="site-footer">
       <div class="container">
         <div class="row">
@@ -331,6 +361,7 @@
   <script src="js/jquery.sticky.js"></script>
   <script src="js/jquery.waypoints.min.js"></script>
   <script src="js/jquery.animateNumber.min.js"></script>
+  <script src="js/modal.js"></script>
   <script src="js/aos.js"></script>
   <script src="js/slick.min.js"></script>
   <script src="js/wow.min.js"></script>

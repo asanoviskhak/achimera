@@ -267,12 +267,9 @@ var showTable = function () {
 						title: 'Регион',
 						field: 'region',
 						filterControl: 'select',
-						valign: 'middle',
 					}, {
 						title: 'Дата',
 						field: 'date',
-						align: 'center',
-						valign: 'middle',
 						sortable: true,
 					}, {
 						width: "300",
@@ -280,13 +277,11 @@ var showTable = function () {
 						title: 'Категория',
 						field: 'category',	
 						filterControl: 'select',
-						valign: 'middle',
 					}, {
 						width: "350",
 						unitWidth: "px",
 						field: 'description',
-						title: 'Описание',
-						formatter: textFormatter
+						title: 'Описание'
 					}, {
 						field: 'contacts',
 						title: 'Контакты',

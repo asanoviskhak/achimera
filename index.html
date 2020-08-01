@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="fonts/icomoon/style.css">
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/magnific-popup.css">
     <link rel="stylesheet" href="css/jquery-ui.css">
@@ -25,12 +26,9 @@
     <link rel="stylesheet" href="css/aos.css">
 
     <link rel="stylesheet" href="css/style.css">
-
     <link href="css/select2.min.css" rel="stylesheet" media="all">
     
     <link href="css/animate.css" rel="stylesheet" media="all">
-
-
     
   </head>
   <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
@@ -62,8 +60,9 @@
                 <ul class="site-menu main-menu js-clone-nav ml-auto d-none d-lg-block">
                   <li><a href="#home-section" class="nav-link">Главная</a></li>
                   <li><a href="#need-help" class="nav-link">Нужна помощь</a></li>
-                  <li><a href="#give-help" class="nav-link">Хочу помочь</a></li>
+                  <li><a href="#give-help" class="nav-link">Готов помочь</a></li>
                   <li><a href="canhelp.html" class="nav-link">Кто готов помочь</a></li>
+                  <li><a href="needhelp.html" class="nav-link">Кому нужна помощь</a></li>
                   <li><a href="#" class="nav-link">О нас</a></li>
                 </ul>
               </nav>
@@ -88,7 +87,7 @@
         <p>Нажмите на этот блок если вам нужны лекарства, врачебная помощь или что-то другое связанное с предыдущими</p>
       </a>
       <a href="#give-help" class="onhover">
-        <h2>Хочу помочь</h2>
+        <h2>Готов помочь</h2>
         <p>Нажмите на этот блок если вы хотите помочь лекарством, врачебным советом или другими материальными вещами</p>
       </a>
       <a href="canhelp.html" class="onhover">
@@ -119,10 +118,19 @@
                       Страна
                     </label>
                     <select class="form-control" name="country" id="country" required>
-                      <option selected="--">--</option>
-                      <option value="KG">Кыргызстан</option>
-                      <option value="KZ">Казахстан</option>
-                      <option value="UZ">Узбекистан</option>
+                        <option selected>--</option>
+                        <option value="KG">Кыргызстан</option>
+                        <option value="KZ">Казахстан</option>
+                        <option value="UZ">Узбекистан</option>
+                        <option value="RU">Россия</option>
+                        <option value="UKR">Украина</option>
+                        <option value="GRU">Грузия</option>
+                        <option value="AZ">Азербайджан</option>
+                        <option value="ARM">Армения</option>
+                        <option value="TKM">Туркмения</option>
+                        <option value="BLR">Беларусь</option>
+                        <option value="MLD">Молдова</option>
+                        <option value="TJK">Тажикистан</option>
                     </select>
                   </div>
                 </div>
@@ -194,7 +202,7 @@
       <div class="container">
         <div class="row">
           <div class="col-12 text-center mb-5">
-            <h2 class="text-uppercase text-white">Хочу помочь</h2>
+            <h2 class="text-uppercase text-white">Готов помочь</h2>
             <p>Заполните все поля - опишите чем конкретно вы можете помочь и <br>нажмите "Опубликовать"</p>
           </div>
         </div>
@@ -211,6 +219,15 @@
                       <option value="KG">Кыргызстан</option>
                       <option value="KZ">Казахстан</option>
                       <option value="UZ">Узбекистан</option>
+                      <option value="RU">Россия</option>
+                      <option value="UKR">Украина</option>
+                      <option value="GRU">Грузия</option>
+                      <option value="AZ">Азербайджан</option>
+                      <option value="ARM">Армения</option>
+                      <option value="TKM">Туркмения</option>
+                      <option value="BLR">Беларусь</option>
+                      <option value="MLD">Молдова</option>
+                      <option value="TJK">Тажикистан</option>
                     </select>
                 </div>
               </div>
@@ -249,7 +266,7 @@
 
               <div class="form-group row">
                 <div class="col-md-12">
-                  <textarea name="" id="description2" class="form-control" placeholder="Опишите свою проблему или то что вам нужно." cols="20" rows="5"></textarea>
+                  <textarea name="" id="description2" class="form-control" placeholder="Опишите то чем вы можете помочь другим (напр.: лекарства)" cols="20" rows="5"></textarea>
                 </div>
               </div>
 
@@ -312,8 +329,9 @@
                 
                   <a href="#home-section">Главная</a> |
                   <a href="#need-help">Нужна помощь</a> |
-                  <a href="#give-help">Хочу помочь</a> |
+                  <a href="#give-help">Готов помочь</a> |
                   <a href="canhelp.html">Кто готов помочь</a> |
+                  <a href="needhelp.html">Кому нужна помощь</a> |
                   <a href="#">О нас</a> 
                 
               </div>
@@ -351,8 +369,10 @@
   <script src="js/select2.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-firestore.js"></script>
   <script src="js/main.js"></script>
-    
+  <script src="js/data-handling.js"></script>
   </body>
 </html>

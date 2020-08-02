@@ -376,14 +376,14 @@ var showTableNeed = function () {
 			querySnapshot.forEach(function(doc) {
 				item = doc.data();
 				var options = {
-					day:'numeric', month:'numeric', year:'numeric', hour: "2-digit", minute:'2-digit'
+					day:'numeric', month:'numeric', year:'2-digit', hour: "2-digit", minute:'2-digit'
 				}
 				documents.push({
 					"region": item.regionCity,
-					"date":(new Date(item.timestamp.seconds*1000).toLocaleDateString('en-GB', options)),
+					"date":(new Date(item.timestamp.seconds*1000).toLocaleDateString('ru-RU', options)),
 					"category": item.category,
 					"description": item.description,
-					"name":item.firstName + " "+item.lastName,
+					"name":item.firstName,
 					"contacts": '<span class="icon-whatsapp"></span> ' + item.whatsApp + '<br> <span class="icon-phone"></span> '+ item.phone,
 				}
 				);
@@ -395,34 +395,40 @@ var showTableNeed = function () {
 			locale: "ru-RU",
 			exportTypes: ['json', 'excel'],
 			columns: [
-					{
-						width: "150",
-						unitWidth: "px",
-						title: 'Регион',
-						field: 'region',
-						filterControl: 'select',
-					}, {
-						title: 'Дата',
-						field: 'date',
-						sortable: true,
-					}, {
-						width: "300",
-						unitWidth: "px",
-						title: 'Категория',
-						field: 'category',	
-						filterControl: 'select',
-					}, {
-						width: "350",
-						unitWidth: "px",
-						field: 'description',
-						title: 'Описание'
-					}, {
-						field: 'contacts',
-						title: 'Контакты',
-					}, {
-						field: "name" ,
-						title: 'Имя',
-					},
+				{
+					title: 'Дата',
+					field: 'date',
+					sortable: true,
+					class: "w-16"
+				}, {
+					width: "300",
+					unitWidth: "px",
+					title: 'Категория',
+					field: 'category',	
+					filterControl: 'select',
+					class: "w-16"
+				}, {
+					width: "350",
+					unitWidth: "px",
+					field: 'description',
+					title: 'Описание',
+					class: "w-25"
+				}, {
+					width: "150",
+					unitWidth: "px",
+					title: 'Регион',
+					field: 'region',
+					filterControl: 'select',
+					class: "w-16 "
+				}, {
+					field: 'contacts',
+					title: 'Контакты',
+					class: "w-16 "
+				}, {
+					field: "name" ,
+					title: 'Имя',
+					class: "w-16"
+				},
 				]
 			})
 			if (documents.length==0){
@@ -441,14 +447,14 @@ var showTableNeed = function () {
 				querySnapshot.forEach(function(doc) {
 					item = doc.data();
 					var options = {
-						day:'numeric', month:'numeric', year:'numeric', hour: "2-digit", minute:'2-digit'
+						day:'numeric', month:'numeric', year:'2-digit', hour: "2-digit", minute:'2-digit'
 					}
 					documents.push({
 						"region": item.regionCity,
-						"date":(new Date(item.timestamp.seconds*1000).toLocaleDateString('en-GB',options)),
+						"date":(new Date(item.timestamp.seconds*1000).toLocaleDateString('ru-RU',options)),
 						"category": item.category,
 						"description": item.description,
-						"name":item.firstName + " "+item.lastName,
+						"name":item.firstName,
 						"contacts": '<span class="icon-whatsapp"></span> ' + item.whatsApp + '<br> <span class="icon-phone"></span> '+ item.phone,
 					}
 					);
@@ -460,38 +466,40 @@ var showTableNeed = function () {
 				locale: "ru-RU",
 				exportTypes: ['json', 'excel'],
 				columns: [
-						{
-							width: "150",
-							unitWidth: "px",
-							title: 'Регион',
-							field: 'region',
-							filterControl: 'select',
-							valign: 'middle',
-						}, {
-							title: 'Дата',
-							field: 'date',
-							align: 'center',
-							valign: 'middle',
-							sortable: true,
-						}, {
-							width: "300",
-							unitWidth: "px",
-							title: 'Категория',
-							field: 'category',	
-							filterControl: 'select',
-							valign: 'middle',
-						}, {
-							width: "350",
-							unitWidth: "px",
-							field: 'description',
-							title: 'Описание',
-						}, {
-							field: 'contacts',
-							title: 'Контакты',
-						}, {
-							field: "name" ,
-							title: 'Имя',
-						},
+					{
+						title: 'Дата',
+						field: 'date',
+						sortable: true,
+						class: "w-16"
+					}, {
+						width: "300",
+						unitWidth: "px",
+						title: 'Категория',
+						field: 'category',	
+						filterControl: 'select',
+						class: "w-16"
+					}, {
+						width: "350",
+						unitWidth: "px",
+						field: 'description',
+						title: 'Описание',
+						class: "w-25"
+					}, {
+						width: "150",
+						unitWidth: "px",
+						title: 'Регион',
+						field: 'region',
+						filterControl: 'select',
+						class: "w-16 "
+					}, {
+						field: 'contacts',
+						title: 'Контакты',
+						class: "w-16 "
+					}, {
+						field: "name" ,
+						title: 'Имя',
+						class: "w-16"
+					},
 					]
 				})
 			

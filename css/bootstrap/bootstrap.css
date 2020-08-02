@@ -6120,6 +6120,9 @@ button.bg-dark:focus {
   -webkit-box-shadow: none !important;
   box-shadow: none !important; }
 
+.w-16 {
+    width: 16.6667% !important; }
+
 .w-25 {
   width: 25% !important; }
 

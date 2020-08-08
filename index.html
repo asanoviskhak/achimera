@@ -69,7 +69,7 @@
           
             
 
-          <div class="toggle-button d-inline-block d-lg-none"><a href="#" class="site-menu-toggle py-5 js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
+          <div class="toggle-button d-inline-block d-lg-none"><a href="#" class="site-menu-toggle py-5 js-menu-toggle"><span class="icon-menu h3"></span></a></div>
 
         </div>
       </div>
@@ -104,7 +104,7 @@
       <div class="container">
         <div class="row">
           <div class="col-12 text-center mb-5">
-            <h2 class="text-uppercase text-white">Нужна помощь</h2>
+            <h2 class="text-uppercase text-prime">Нужна помощь</h2>
             <p>Заполните все поля - напишите какая конкретно вам нужна помощь и <br>нажмите на "Опубликовать"</p>
           </div>
         </div>
@@ -114,7 +114,7 @@
               <div class="form-group row country" id="location-list">
                 <div class="col-md-8">
                   <div>
-                    <label for="country" class="text-white text-uppercase">
+                    <label for="country" class="text-prime text-uppercase">
                       Страна
                     </label>
                     <select class="form-control" name="country" id="country" required>
@@ -138,13 +138,13 @@
 
               <div class="form-group row">
                 <div class="col-md-6 mb-4 mb-lg-0">
-                  <label for="first_name" class="text-white text-uppercase" >
+                  <label for="first_name" class="text-prime text-uppercase" >
                     Имя
                   </label>
                   <input type="text" id="first_name" name="first_name" class="form-control" required>
                 </div>
                 <div class="col-md-6">
-                  <label for="first_name" class="text-white text-uppercase">
+                  <label for="first_name" class="text-prime text-uppercase">
                     Фамилия
                   </label>
                   <input type="text" id="last_name" name="last_name" class="form-control" required>
@@ -153,7 +153,7 @@
               
                <div class="form-group row">
                 <div class="col-md-12">
-                  <label for="category" class="text-white text-uppercase">
+                  <label for="category" class="text-prime text-uppercase">
                     Тип помощи
                   </label>
                   <select class="form-control" name="category" id="category" required>
@@ -171,23 +171,32 @@
 
               <div class="form-group row">
                 <div class="col-md-12">
+                  <label for="description" class="text-prime text-uppercase">
+                    Описание
+                  </label>
                   <textarea name="" id="description" class="form-control" placeholder="Опишите свою проблему или то что вам нужно." cols="20" rows="5" required></textarea>
                 </div>
               </div>
 
               <div class="form-group row">
                 <div class="col-md-6 mb-4 mb-lg-0">
-                  <input id="whatsapp" type="tel" class="form-control" placeholder="WhatsApp" required>
+                  <label for="whatsapp" class="text-prime text-uppercase">
+                    WhatsApp
+                  </label>
+                  <input id="whatsapp" type="tel" class="form-control" placeholder="0999876543">
                 </div>
                 <div class="col-md-6">
-                  <input id='phone' type="tel" class="form-control" placeholder="Телефон(если нет WhatsApp)" required>
+                  <label for="phone" class="text-prime text-uppercase">
+                    Телефон
+                  </label>
+                  <input id='phone' type="tel" class="form-control" placeholder="0999876543">
                 </div>
               </div>
 
               <div class="form-group row">
                 <div class="col-md-6 ml-auto">
-                  <p class="text-white">Убедитесь что все поля заполнены правильно и нажмите на "Опубликовать"</p>
-                  <input id="nh_btn" onclick="helper(1);" class="btn btn-block btn-primary text-white py-3 px-5" value="Опубликовать">
+                  <p>Убедитесь что все поля заполнены правильно и нажмите на "Опубликовать"</p>
+                  <input id="nh_btn" onclick="helper(1);" class="btn btn-block btn-primary new-btn-txt py-3 px-5" value="Опубликовать">
                 </div>
               </div>
 
@@ -202,7 +211,7 @@
       <div class="container">
         <div class="row">
           <div class="col-12 text-center mb-5">
-            <h2 class="text-uppercase text-white">Готов помочь</h2>
+            <h2 class="text-uppercase text-prime">Готов помочь</h2>
             <p>Заполните все поля - опишите чем конкретно вы можете помочь и <br>нажмите "Опубликовать"</p>
           </div>
         </div>
@@ -211,7 +220,7 @@
             <form >
               <div class="form-group row country" id="location-list2">
                 <div class="col-md-8">
-                    <label for="country" class="text-white text-uppercase">
+                    <label for="country" class="text-prime text-uppercase">
                       Страна
                     </label>
                     <select class="form-control" name="country" id="country2">
@@ -233,13 +242,13 @@
               </div>
               <div class="form-group row">
                 <div class="col-md-6 mb-4 mb-lg-0">
-                  <label for="first_name2" class="text-white text-uppercase">
+                  <label for="first_name2" class="text-prime text-uppercase">
                     Имя
                   </label>
                   <input type="text" id="first_name2" name="first_name" class="form-control">
                 </div>
                 <div class="col-md-6">
-                  <label for="last_name2" class="text-white text-uppercase">
+                  <label for="last_name2" class="text-prime text-uppercase">
                     Фамилия
                   </label>
                   <input type="text" id="last_name2" name="last_name" class="form-control">
@@ -248,7 +257,7 @@
               
                <div class="form-group row">
                 <div class="col-md-12">
-                  <label for="category" class="text-white text-uppercase">
+                  <label for="category" class="text-prime text-uppercase">
                     Тип помощи
                   </label>
                   <select class="form-control" name="category" id="category2">
@@ -266,23 +275,32 @@
 
               <div class="form-group row">
                 <div class="col-md-12">
+                  <label for="description2" class="text-prime text-uppercase">
+                    Описание
+                  </label>
                   <textarea name="" id="description2" class="form-control" placeholder="Опишите то чем вы можете помочь другим (напр.: лекарства)" cols="20" rows="5"></textarea>
                 </div>
               </div>
 
               <div class="form-group row">
                 <div class="col-md-6 mb-4 mb-lg-0">
-                  <input id="whatsapp2" type="tel" class="form-control" placeholder="WhatsApp">
+                  <label for="whatsapp2" class="text-prime text-uppercase">
+                    WhatsApp
+                  </label>
+                  <input id="whatsapp2" type="tel" class="form-control" placeholder="0999876543">
                 </div>
                 <div class="col-md-6">
-                  <input id='phone2' type="tel" class="form-control" placeholder="Телефон(если нет WhatsApp)">
+                  <label for="phone2" class="text-prime text-uppercase">
+                    Телефон
+                  </label>
+                  <input id='phone2' type="tel" class="form-control" placeholder="0999876543">
                 </div>
               </div>
 
               <div class="form-group row">
                 <div class="col-md-6 ml-auto">
-                  <p class="text-white">Убедитесь что все поля заполнены правильно и нажмите "Опубликовать"</p>
-                  <input id="gh_btn" onclick="helper(0);" class="btn btn-block btn-primary text-white py-3 px-5" value="Опубликовать" >
+                  <p>Убедитесь что все поля заполнены правильно и нажмите "Опубликовать"</p>
+                  <input id="gh_btn" onclick="helper(0);" class="btn btn-block btn-primary new-btn-txt py-3 px-5" value="Опубликовать" >
                 </div>
               </div>
 
@@ -318,11 +336,11 @@
 
       
             <h2 class="footer-heading mb-2 mt-3">Следите за нами:</h2>
-            <a href="https://t.me/achimeraa"  class="pr-3" target="_blank"><span class="flaticon-telegram"></span></a>
-            <a href="http://wa.me/9292862887" class="pl-3 pr-3" target="_blank"><span class="flaticon-whatsapp"></span></a>
-            <a href="https://instagram.com/_achimera_?igshid=h75wpecptydx" class="pl-3 pr-3" target="_blank"><span class="flaticon-instagram"></span></a>
-            <a href="https://vm.tiktok.com/JY5Wog1/" class="pl-3 pr-3" target="_blank"><span class="flaticon-tiktok"></span></a>
-            <a href="https://www.youtube.com/channel/UCxtH3gVl3SNWH1FVXeIBNRw" class="pl-3" target="_blank" ><span class="flaticon-youtube"></span></a>
+            <a href="https://t.me/achimeraa"  class="pr-3" target="_blank"><span class="i-hover flaticon-telegram"></span></a>
+            <a href="http://wa.me/9292862887" class="pl-3 pr-3" target="_blank"><span class="i-hover flaticon-whatsapp"></span></a>
+            <a href="https://instagram.com/_achimera_?igshid=h75wpecptydx" class="pl-3 pr-3" target="_blank"><span class="i-hover flaticon-instagram"></span></a>
+            <a href="https://vm.tiktok.com/JY5Wog1/" class="pl-3 pr-3" target="_blank"><span class="i-hover flaticon-tiktok"></span></a>
+            <a href="https://www.youtube.com/channel/UCxtH3gVl3SNWH1FVXeIBNRw" class="pl-3" target="_blank" ><span class="i-hover flaticon-youtube"></span></a>
         </div>
               <div class="col-md-6 ml-auto">
                 <h2 class="footer-heading mb-2 mt-3">Навигация:</h2>

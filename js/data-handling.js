@@ -49,6 +49,7 @@ var firebaseConfig = {
 		phone = $('#phone').val();
 		rgn = document.getElementById(country+"-регион");
 		region = rgn.value;
+		if (region == '') $('#modalWarning').modal('show'); 
 		nUser = needhelp.doc(country).collection(region);
 	  }
 	  else if (ch===0){
@@ -63,7 +64,7 @@ var firebaseConfig = {
 		phone = $('#phone2').val();
 		rgn = document.getElementById(country+"-регион2");
 		region = rgn.value;
-		console.log(country, region);
+		if (region == '') $('#modalWarning').modal('show'); 
 		nUser = givehelp.doc(country).collection(region);
 	  }
 	  if (description.length==0) description+="Нет описания";

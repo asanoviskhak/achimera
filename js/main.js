@@ -6,6 +6,14 @@
 
 
  function helper(val) {
+	if (val === 1) { 
+		if ($('#country').val() === '--' )
+			$('#modalWarning').modal('show'); 
+	}
+	else{ 
+		if ($('#country2').val() === '--' )
+			$('#modalWarning').modal('show'); 
+	}
 	help(val);
 	$('#modalCenter1').modal('show');
 }

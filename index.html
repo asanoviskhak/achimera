@@ -310,6 +310,7 @@
         </div>
       </div>
     </div>
+
     <div class="modal fade" id="modalCenter1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
@@ -320,10 +321,29 @@
             </button>
           </div>
           <div class="modal-body">
-            Публикация вашего объявления прошла успешно! Нажмите "Закрыть" что-бы вернуться на главную.
+            Публикация вашего объявления прошла успешно! Оно автоматически будет удалено из этого сайта через 20 дней. Нажмите "Закрыть" что-бы вернуться на главную.
           </div>
           <div class="modal-footer">
             <button type="button" onclick="location.href='index.html';" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="modalWarning" tabindex="-1" role="dialog" aria-labelledby="WarningTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title text-black" id="warningTitle">Не выбрана страна или регион!</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Закрыть">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            Пожалуйста выберите страну и регион. Что-бы вернуться на главную нажмите "Закрыть".
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
           </div>
         </div>
       </div>

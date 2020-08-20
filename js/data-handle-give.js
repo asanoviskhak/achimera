@@ -28,7 +28,7 @@ var firebaseConfig = {
 	}
 	// ...
   });
-
+  firebase.analytics();
   var givehelp = firebase.firestore().collection("giveHelp");
 
 var data = {

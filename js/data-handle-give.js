@@ -28,6 +28,7 @@ var firebaseConfig = {
 	}
 	// ...
   });
+
   firebase.analytics();
   var givehelp = firebase.firestore().collection("giveHelp");
 
@@ -521,3 +522,4 @@ jQuery(document).ready(function($) {
 	buildForms(data);
 	$('#country3').on('change', updateStates);
 });
+
